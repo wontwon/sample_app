@@ -37,5 +37,10 @@ describe "Static pages" do
       visit '/static_pages/about'
       expect(page).to have_title("Ruby on Rails Tutorials Sample App | About")
     end
+
+    it "should not have a custome page title" do
+      visit '/static_pages/home'
+      expect(page).not_to have_title(' | Home')
+    end
   end
 end
